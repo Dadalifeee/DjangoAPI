@@ -1,8 +1,13 @@
 # DjangoAPI
-Django api for téléconsultation
 
+## Project setup
+```
 env\Scripts\activate
-<br>
+```
+```
 cd mysite
-<br>
+```
+```
 python manage.py runserver
+```
+
