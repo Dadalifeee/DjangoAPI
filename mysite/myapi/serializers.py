@@ -11,9 +11,9 @@ class HeroSerializer(serializers.HyperlinkedModelSerializer):
 class PatientSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Patient
-        fields = ('id', 'nom', 'prenom', 'email', 'date')
+        fields = ('id', 'nom', 'prenom', 'email', 'date', 'password')
 
 class MedecinSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Medecin
-        fields = ('id', 'nom', 'prenom', 'email', 'date', 'specialite', 'langue', 'centre')
+        fields = ('id', 'nom', 'prenom', 'email', 'date', 'specialite', 'langue', 'centre', 'password')
