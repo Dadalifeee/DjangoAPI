@@ -1,18 +1,17 @@
 from rest_framework import serializers
 
-from .models import Patient, Medecin, Adressepostale, Archive, Centre, Consultation, Fichier, Groupe, Horaire, Langue, \
-    Logs, Parametre, Pays, Rendezvous, Specialite, Ville, Tokbox, Fileattente
+from .models import *
 
 
 class PatientSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Patient
-        fields = "__all__"
+        fields = ['nidpatient','snom','sprenom','smail','bufmotdepasse','stelephone','nnumsecusocial','ngenre','dnaissance','nidadressepostale','noriginecreation']
 
 class MedecinSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Medecin
-        fields = "__all__"
+        fields = ['nidmedecin', 'snom', 'sprenom', 'bdisponible', 'smail', 'stelephone', 'bufmdp', 'ngenre', 'bufphoto', 'stokenconnexion', 'srpps', 'sinformations', 'dhdemande', 'dhvalidation', 'dhdernieremodification', 'nidadressepostale', 'ndureeconsultationmoyenne']
 
 class AdresseSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -94,4 +93,24 @@ class VilleSerializer(serializers.HyperlinkedModelSerializer):
 class TokboxSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Tokbox
+        fields = "__all__"
+
+class MedecinCentreSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = MedecinCentre
+        fields = "__all__"
+
+class MedecinLangueSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = MedecinLangue
+        fields = "__all__"
+
+class MedecinPlanningSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = MedecinPlanning
+        fields = "__all__"
+
+class MedecinSpecialiteSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = MedecinSpecialite
         fields = "__all__"
